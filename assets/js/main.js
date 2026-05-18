@@ -98,4 +98,25 @@ document.addEventListener('DOMContentLoaded', function () {
       mobileMenu?.classList.add('hidden');
     });
   });
+
+  const cookieBanner = document.getElementById('cookie-banner');
+  const acceptCookies = document.getElementById('accept-cookies');
+  const dismissCookies = document.getElementById('dismiss-cookies');
+
+  if (cookieBanner) {
+    if (localStorage.getItem('sidmiai_cookies_accepted')) {
+      cookieBanner.style.display = 'none';
+    } else {
+      acceptCookies?.addEventListener('click', function () {
+        localStorage.setItem('sidmiai_cookies_accepted', 'true');
+        cookieBanner.style.transform = 'translateY(150%)';
+        setTimeout(() => cookieBanner.style.display = 'none', 500);
+      });
+      dismissCookies?.addEventListener('click', function () {
+        localStorage.setItem('sidmiai_cookies_accepted', 'false');
+        cookieBanner.style.transform = 'translateY(150%)';
+        setTimeout(() => cookieBanner.style.display = 'none', 500);
+      });
+    }
+  }
 });
