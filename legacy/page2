@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Capabilities | Clinical Intelligence OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e0e2ea",
+                        "outline": "#8a919d",
+                        "on-tertiary-container": "#4f2f00",
+                        "on-secondary-fixed": "#001f24",
+                        "on-tertiary": "#472a00",
+                        "surface-container-highest": "#31353b",
+                        "surface-container": "#1c2026",
+                        "secondary-fixed-dim": "#62d6e7",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "outline-variant": "#404752",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#de8d00",
+                        "on-secondary-container": "#002f35",
+                        "on-primary-fixed": "#001c38",
+                        "error": "#ffb4ab",
+                        "secondary": "#62d6e7",
+                        "background": "#101419",
+                        "primary-fixed-dim": "#a2c9ff",
+                        "inverse-surface": "#e0e2ea",
+                        "surface-container-low": "#181c21",
+                        "primary-container": "#4da2ff",
+                        "on-surface-variant": "#c0c7d4",
+                        "secondary-fixed": "#95f1ff",
+                        "on-primary": "#00315c",
+                        "inverse-on-surface": "#2d3137",
+                        "surface-tint": "#a2c9ff",
+                        "on-background": "#e0e2ea",
+                        "on-error": "#690005",
+                        "surface-variant": "#31353b",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface-container-high": "#272a30",
+                        "on-tertiary-fixed": "#2b1700",
+                        "surface-bright": "#363940",
+                        "primary": "#a2c9ff",
+                        "inverse-primary": "#0060aa",
+                        "tertiary-fixed-dim": "#ffb961",
+                        "surface": "#101419",
+                        "tertiary": "#ffb961",
+                        "on-secondary-fixed-variant": "#004f57",
+                        "surface-dim": "#101419",
+                        "tertiary-fixed": "#ffddb8",
+                        "secondary-container": "#0d9faf",
+                        "primary-fixed": "#d3e4ff",
+                        "on-secondary": "#00363d",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#003765",
+                        "on-primary-fixed-variant": "#004881"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "unit": "4px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["15px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0b0e14;
+            color: #e0e2ea;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(77, 162, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .ai-pulse {
+            animation: pulse 3s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; transform: scale(1); filter: blur(8px); }
+            50% { opacity: 0.8; transform: scale(1.1); filter: blur(12px); }
+        }
+        .waveform-bar {
+            animation: wave 1.2s infinite ease-in-out;
+        }
+        @keyframes wave {
+            0%, 100% { height: 8px; }
+            50% { height: 32px; }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(162, 201, 255, 0.4);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% -20%, rgba(77, 162, 255, 0.15) 0%, transparent 60%);
+        }
+    </style>
+</head>
+<body class="dark overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 docked full-width top-0 sticky z-50 h-20">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+<div class="font-headline-lg text-headline-lg font-bold tracking-tighter text-on-surface dark:text-on-surface">
+                Clinical Intelligence OS
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Solutions</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary font-bold border-b-2 border-primary pb-1" href="#">AI Capabilities</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Enterprise</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Security</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Resources</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-sm text-label-sm text-on-surface hover:text-secondary px-4 py-2 transition-colors">Log In</button>
+<button class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-6 py-2.5 rounded-full hover:scale-95 active:scale-95 transition-transform duration-300 shadow-[0_0_15px_rgba(77,162,255,0.3)]">Request Demo</button>
+</div>
+</div>
+</nav>
+<main class="hero-gradient">
+<!-- Hero Section -->
+<section class="relative pt-32 pb-24 px-margin-desktop max-w-container-max mx-auto text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 mb-8">
+<span class="w-2 h-2 rounded-full bg-secondary ai-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Intelligence Engine v4.0</span>
+</div>
+<h1 class="font-display-xl text-display-xl mb-6 text-glow leading-tight">Clinical Intelligence at the <br/><span class="text-secondary">Edge of Discovery</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                Moving beyond simple automation to a proactive computational partner that anticipates clinical needs through ambient sensing and multi-modal analysis.
+            </p>
+<!-- Hero Visualization: Abstract AI Brain/Neural Cluster -->
+<div class="relative w-full aspect-video max-w-4xl mx-auto glass-card rounded-2xl overflow-hidden mt-12 flex items-center justify-center">
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen" data-alt="A highly detailed and cinematic visualization of an artificial neural network glowing in a deep blue and cyan color palette. Complex nodes and shimmering data filaments weave together in a vast, dark digital space, representing advanced computational medicine. The lighting is soft and atmospheric, with tiny floating particles suggesting a microscopic or cosmic scale, embodying a sense of intelligent calm and technological superiority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr_MQfdAbLP9Jp_Bw9idoodPzGhBs9PuooYMd0cXXXp8aNFZbIdsMWjx1uXmH7cbEDD3OVeX0VLjSXb_Xr0XTjKM28lFPTJ4r60Rq9OigKMpqXHcHlArdzWbl8YD16sNy8Sbr8gQTU43xisZ6II87YqU-wW0bTnoUKRbSqfVpewOUwsUdt8deVTCZqOtLCgZMd1oZMuUtNwsZX9VdyBBg548PPNNteDYK-f9T3XvtViZ-gKGrBflxRS8BCELdTvrCQm2H8gn9c27sr"/>
+<!-- Animated Neural Interface -->
+<div class="relative z-10 w-full h-full flex flex-col items-center justify-center">
+<div class="flex items-end gap-1.5 h-32 mb-8">
+<div class="waveform-bar w-1 bg-secondary rounded-full" style="animation-delay: 0.1s"></div>
+<div class="waveform-bar w-1 bg-primary rounded-full" style="animation-delay: 0.3s"></div>
+<div class="waveform-bar w-1 bg-secondary rounded-full" style="animation-delay: 0.2s"></div>
+<div class="waveform-bar w-1 bg-primary rounded-full" style="animation-delay: 0.5s"></div>
+<div class="waveform-bar w-1 bg-secondary rounded-full" style="animation-delay: 0.4s"></div>
+<div class="waveform-bar w-1 bg-primary rounded-full" style="animation-delay: 0.1s"></div>
+<div class="waveform-bar w-1 bg-secondary rounded-full" style="animation-delay: 0.6s"></div>
+</div>
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.3em]">Processing multi-modal inputs...</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Core Intelligence Modules -->
+<section class="px-margin-desktop max-w-container-max mx-auto py-24">
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Ambient AI Card -->
+<div class="col-span-12 md:col-span-7 glass-card rounded-2xl p-10 flex flex-col justify-between overflow-hidden relative group">
+<div class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity">
+<span class="material-symbols-outlined text-[120px] text-secondary">settings_voice</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-secondary mb-4 uppercase tracking-wider">Ambient Intelligence</div>
+<h2 class="font-headline-lg text-headline-lg mb-4">Invisible Scribes</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-8">
+                            High-fidelity real-time transcription with sub-millisecond latency. Our acoustic models are trained on 1.2M+ hours of clinical dialogue across 40+ specialties.
+                        </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Speaker Diarization (Physician/Patient separation)</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Advanced noise-cancellation for chaotic ER environments</span>
+</li>
+</ul>
+</div>
+<div class="mt-12 flex items-center gap-4">
+<div class="h-1 flex-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-3/4 rounded-full shadow-[0_0_10px_#62d6e7]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">98.4% Accuracy</span>
+</div>
+</div>
+<!-- Generative SOAP Card -->
+<div class="col-span-12 md:col-span-5 glass-card rounded-2xl p-10 flex flex-col bg-primary-container/5">
+<span class="material-symbols-outlined text-primary mb-6" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h2 class="font-headline-lg text-headline-lg mb-4">Generative SOAP</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                        The OS doesn't just record; it understands. It instantly maps conversation into structured SOAP notes and suggests hierarchical ICD-10 codes based on medical logic.
+                    </p>
+<div class="mt-auto space-y-3">
+<div class="p-3 bg-surface-container-highest/40 rounded-lg border border-outline-variant/30">
+<div class="font-label-sm text-label-sm text-outline mb-1 uppercase">Objective</div>
+<div class="font-body-md text-body-md">Pt reports 3/10 pain in lumbar...</div>
+</div>
+<div class="p-3 bg-surface-container-highest/40 rounded-lg border border-outline-variant/30">
+<div class="font-label-sm text-label-sm text-outline mb-1 uppercase">ICD-10 Code Suggestion</div>
+<div class="font-body-md text-body-md text-secondary">M54.50 - Low back pain, unspecified</div>
+</div>
+</div>
+</div>
+<!-- Report Intelligence Card -->
+<div class="col-span-12 md:col-span-4 glass-card rounded-2xl p-10 flex flex-col">
+<span class="material-symbols-outlined text-secondary mb-6" data-icon="biotech">biotech</span>
+<h2 class="font-headline-lg text-headline-lg mb-4">Vision Intelligence</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                        Deep dive into MRI, Pathology, and Bloodwork. Our computer vision layer highlights anomalies before you even scroll.
+                    </p>
+<div class="relative w-full aspect-square bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700" data-alt="A clean, futuristic medical diagnostic interface showing a stylized MRI scan of a human brain. The image is rendered in high-contrast greyscale with glowing cyan digital markers highlighting specific areas of interest. Minimalist charts and data streams are overlaid on the scan, creating a technical and professional aesthetic consistent with a high-end medical command center." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB8GHglRSvxHkxxbKZyLGOxNRLu3vJI65qMNF5G7nRF0pBvYPzdnJgPK2nRalOX-E5RwZypVtmKEuHFUB3fgrpRVrgLqoGqg-yGEnlFL4siWKfE2MRqkkS5SHH8ZhQJ5_BSDwccs8ovx3ihmUFwSwFDquXvb_3d3GngJAIP6GSPWsbxhAmWdoB4IgwpV23aQ6ica3pRrrPisau5Dom4JZQ0sxV6hSU-meCV4bguvOn_aA5kZEDkKNsIWguKApRR7PxZx0FSQPkBpoy"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="font-label-sm text-label-sm text-secondary mb-1">ANOMALY DETECTED</div>
+<div class="h-1 w-full bg-secondary/30 rounded-full">
+<div class="h-full bg-secondary w-1/3"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Multi-modal AI Card -->
+<div class="col-span-12 md:col-span-8 glass-card rounded-2xl p-10 flex flex-col justify-center relative overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-4">Multi-modal Fusion</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                The power of Clinical Intelligence OS lies in the synthesis. We correlate voice patterns with vitals and imaging data to create a holistic diagnostic profile.
+                            </p>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full border border-outline-variant/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">mic</span>
+</div>
+<div class="w-12 h-12 rounded-full border border-outline-variant/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">description</span>
+</div>
+<div class="w-12 h-12 rounded-full border border-outline-variant/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">visibility</span>
+</div>
+</div>
+</div>
+<div class="relative h-64 flex items-center justify-center">
+<!-- Visualizing Fusion with overlapping circles -->
+<div class="absolute w-40 h-40 rounded-full border border-primary/30 ai-pulse" style="animation-delay: 0s"></div>
+<div class="absolute w-40 h-40 rounded-full border border-secondary/30 ai-pulse translate-x-12" style="animation-delay: 0.5s"></div>
+<div class="absolute w-40 h-40 rounded-full border border-tertiary/30 ai-pulse -translate-x-12" style="animation-delay: 1s"></div>
+<span class="relative font-label-sm text-label-sm font-bold tracking-widest">FUSION CORE</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Predictive Analytics Section -->
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,#4da2ff_0%,transparent_50%)]"></div>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto relative z-10">
+<div class="flex flex-col md:flex-row gap-20 items-center">
+<div class="flex-1 order-2 md:order-1">
+<div class="glass-card rounded-2xl p-8 border-primary/20">
+<div class="flex justify-between items-end mb-8">
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase mb-2">Predictive Risk Stratification</div>
+<div class="font-headline-lg text-headline-lg text-primary">Patient Cohort B-12</div>
+</div>
+<div class="text-right">
+<div class="font-display-lg text-display-lg text-secondary">84%</div>
+<div class="font-label-sm text-label-sm text-outline">Risk Reduction</div>
+</div>
+</div>
+<!-- Mock Graph -->
+<div class="h-48 flex items-end gap-2 px-2">
+<div class="flex-1 bg-surface-container-high rounded-t-lg transition-all hover:bg-primary" style="height: 40%"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg transition-all hover:bg-primary" style="height: 60%"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg transition-all hover:bg-primary" style="height: 35%"></div>
+<div class="flex-1 bg-primary rounded-t-lg transition-all" style="height: 85%"></div>
+<div class="flex-1 bg-secondary rounded-t-lg transition-all" style="height: 100%"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg transition-all hover:bg-primary" style="height: 55%"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg transition-all hover:bg-primary" style="height: 45%"></div>
+</div>
+<div class="mt-4 flex justify-between font-label-sm text-label-sm text-outline px-2">
+<span>Q1</span><span>Q2</span><span>Q3</span><span>Q4 (Projected)</span>
+</div>
+</div>
+</div>
+<div class="flex-1 order-1 md:order-2">
+<div class="font-label-sm text-label-sm text-secondary mb-4 uppercase tracking-[0.2em]">Future of Care</div>
+<h2 class="font-display-lg text-display-lg mb-6">Predictive Analytics &amp; Risk Stratification</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                            Identify high-risk patients before the event occurs. Our predictive engine monitors real-time patient data streams to flag physiological decline with a 6-hour lead time on average.
+                        </p>
+<button class="flex items-center gap-2 font-label-sm text-label-sm text-primary hover:gap-4 transition-all">
+                            EXPLORE PREDICTIVE MODELS <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-margin-desktop text-center max-w-container-max mx-auto">
+<div class="glass-card rounded-3xl p-20 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5"></div>
+<div class="relative z-10">
+<h2 class="font-display-lg text-display-lg mb-8">Ready to evolve your practice?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-12">
+                        Join 200+ leading medical institutions using CIOS to reduce burn-out and improve clinical outcomes.
+                    </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-10 py-4 rounded-full font-bold shadow-[0_0_20px_rgba(77,162,255,0.4)] hover:scale-105 transition-transform">Get Started Today</button>
+<button class="bg-surface-container-highest text-on-surface font-label-sm text-label-sm px-10 py-4 rounded-full border border-outline-variant hover:bg-surface-bright transition-colors">Watch Documentation</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/10 full-width">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="font-headline-lg text-headline-lg font-semibold text-on-surface dark:text-on-surface mb-2">Clinical Intelligence OS</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant">© 2024 Clinical Intelligence OS. Advanced Computational Medicine.</div>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-secondary hover:underline decoration-secondary/50 underline-offset-4 transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-secondary hover:underline decoration-secondary/50 underline-offset-4 transition-colors duration-200" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-secondary hover:underline decoration-secondary/50 underline-offset-4 transition-colors duration-200" href="#">HIPAA Compliance</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-secondary hover:underline decoration-secondary/50 underline-offset-4 transition-colors duration-200" href="#">Trust Center</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-secondary hover:underline decoration-secondary/50 underline-offset-4 transition-colors duration-200" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for scroll reveals
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(card);
+        });
+
+        // Add some dynamic movement to the waveform bars
+        const bars = document.querySelectorAll('.waveform-bar');
+        setInterval(() => {
+            bars.forEach(bar => {
+                const newHeight = Math.floor(Math.random() * 40) + 10;
+                bar.style.height = `${newHeight}px`;
+            });
+        }, 150);
+    </script>
+</body></html>

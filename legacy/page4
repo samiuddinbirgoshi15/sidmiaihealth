@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enterprise Solutions | Clinical Intelligence OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(77, 162, 255, 0.3);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .ai-pulse {
+            position: relative;
+            overflow: hidden;
+        }
+        .ai-pulse::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(124, 238, 255, 0.05) 0%, transparent 70%);
+            animation: pulse 8s infinite linear;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.8); opacity: 0.5; }
+        }
+        body {
+            background-color: #101419;
+            color: #e0e2ea;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e0e2ea",
+                        "outline": "#8a919d",
+                        "on-tertiary-container": "#4f2f00",
+                        "on-secondary-fixed": "#001f24",
+                        "on-tertiary": "#472a00",
+                        "surface-container-highest": "#31353b",
+                        "surface-container": "#1c2026",
+                        "secondary-fixed-dim": "#62d6e7",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "outline-variant": "#404752",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#de8d00",
+                        "on-secondary-container": "#002f35",
+                        "on-primary-fixed": "#001c38",
+                        "error": "#ffb4ab",
+                        "secondary": "#62d6e7",
+                        "background": "#101419",
+                        "primary-fixed-dim": "#a2c9ff",
+                        "inverse-surface": "#e0e2ea",
+                        "surface-container-low": "#181c21",
+                        "primary-container": "#4da2ff",
+                        "on-surface-variant": "#c0c7d4",
+                        "secondary-fixed": "#95f1ff",
+                        "on-primary": "#00315c",
+                        "inverse-on-surface": "#2d3137",
+                        "surface-tint": "#a2c9ff",
+                        "on-background": "#e0e2ea",
+                        "on-error": "#690005",
+                        "surface-variant": "#31353b",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface-container-high": "#272a30",
+                        "on-tertiary-fixed": "#2b1700",
+                        "surface-bright": "#363940",
+                        "primary": "#a2c9ff",
+                        "inverse-primary": "#0060aa",
+                        "tertiary-fixed-dim": "#ffb961",
+                        "surface": "#101419",
+                        "tertiary": "#ffb961",
+                        "on-secondary-fixed-variant": "#004f57",
+                        "surface-dim": "#101419",
+                        "tertiary-fixed": "#ffddb8",
+                        "secondary-container": "#0d9faf",
+                        "primary-fixed": "#d3e4ff",
+                        "on-secondary": "#00363d",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#003765",
+                        "on-primary-fixed-variant": "#004881"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "unit": "4px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["15px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-outline-variant/30">
+<nav class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="font-headline-lg text-headline-lg font-bold tracking-tighter text-on-surface dark:text-on-surface">
+                Clinical Intelligence OS
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-secondary transition-all duration-300" href="#">Solutions</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-secondary transition-all duration-300" href="#">AI Capabilities</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary font-bold border-b-2 border-primary pb-1" href="#">Enterprise</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-secondary transition-all duration-300" href="#">Security</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-secondary transition-all duration-300" href="#">Resources</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-sm text-label-sm px-6 py-2 rounded-lg border border-outline-variant/30 hover:bg-surface-container-high transition-colors">Log In</button>
+<button class="font-label-sm text-label-sm px-6 py-2 rounded-lg bg-primary-container text-on-primary-container font-bold hover:scale-105 transition-transform active:scale-95 shadow-[0_0_15px_rgba(77,162,255,0.3)]">Request Demo</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center pt-20 px-margin-desktop overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-[100px]"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:48px_48px]"></div>
+</div>
+<div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-gutter relative z-10">
+<div class="md:col-span-7 flex flex-col justify-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary mb-6 w-fit">
+<span class="material-symbols-outlined text-[14px]">enterprise</span>
+<span class="font-label-sm text-label-sm">ENTERPRISE SCALE PLATFORM</span>
+</div>
+<h1 class="font-display-xl text-display-xl mb-6 text-on-surface">Deploying Intelligence <span class="text-primary">at Scale</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                        The definitive computational layer for modern health systems. Reduce physician burnout, secure revenue integrity, and achieve system-wide ROI through clinical-grade AI.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-primary-container text-on-primary-container font-bold rounded-lg hover:shadow-[0_0_20px_rgba(77,162,255,0.4)] transition-all flex items-center gap-2 group">
+                            Speak with an Enterprise Lead
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="px-8 py-4 border border-outline-variant bg-surface/40 backdrop-blur rounded-lg hover:bg-surface-container-high transition-colors">
+                            Technical Whitepaper
+                        </button>
+</div>
+</div>
+<div class="md:col-span-5 hidden md:block">
+<div class="glass-card rounded-2xl p-6 aspect-square flex flex-col relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10"></div>
+<div class="mb-4 flex justify-between items-center relative z-10">
+<span class="font-label-sm text-label-sm text-primary">NETWORK MONITOR</span>
+<div class="flex gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-secondary/40"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-secondary/40"></div>
+</div>
+</div>
+<div class="flex-grow flex items-center justify-center relative z-10">
+<!-- Abstract architecture diagram representation -->
+<div class="grid grid-cols-3 gap-4 w-full h-full p-4">
+<div class="col-span-3 h-12 glass-card rounded-lg flex items-center px-4 border-primary/20">
+<div class="w-2 h-2 rounded-full bg-primary mr-3"></div>
+<div class="h-1.5 w-3/4 bg-on-surface/10 rounded"></div>
+</div>
+<div class="col-span-1 h-32 glass-card rounded-lg flex flex-col p-3 border-secondary/20">
+<div class="w-full h-1 bg-secondary/30 rounded mb-2"></div>
+<div class="w-2/3 h-1 bg-on-surface/10 rounded mb-1"></div>
+<div class="w-1/2 h-1 bg-on-surface/10 rounded"></div>
+</div>
+<div class="col-span-2 h-32 glass-card rounded-lg flex flex-col p-3 border-primary/20">
+<div class="flex gap-1 mb-2">
+<div class="w-4 h-4 rounded-full bg-primary/20"></div>
+<div class="w-4 h-4 rounded-full bg-primary/20"></div>
+<div class="w-4 h-4 rounded-full bg-primary/40"></div>
+</div>
+<div class="w-full h-12 bg-on-surface/5 rounded mt-auto"></div>
+</div>
+<div class="col-span-3 h-12 glass-card rounded-lg border-dashed border-outline-variant flex items-center justify-center">
+<span class="font-label-sm text-label-sm opacity-30">ENCRYPTED DATA STREAM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Institutional Benefits -->
+<section class="py-24 px-margin-desktop bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto">
+<div class="mb-16 text-center max-w-2xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg mb-4">Engineered for Executive Impact</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">We align clinical excellence with institutional sustainability. CI-OS delivers measurable improvements across every department.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Scalability -->
+<div class="glass-card p-8 rounded-2xl flex flex-col">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+</div>
+<h3 class="font-headline-lg text-[24px] mb-4">Enterprise Scalability</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">A cloud-native infrastructure that supports thousands of concurrent clinicians across multiple hospitals with zero latency degradation.</p>
+<div class="mt-8 pt-8 border-t border-outline-variant/10">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm opacity-60">UPTIME</span>
+<span class="font-label-sm text-label-sm text-secondary">99.99% SLA</span>
+</div>
+</div>
+</div>
+<!-- ROI / Burnout -->
+<div class="glass-card p-8 rounded-2xl border-primary/20 shadow-[0_0_30px_rgba(77,162,255,0.05)] flex flex-col">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary mb-6">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</div>
+<h3 class="font-headline-lg text-[24px] mb-4">Proven ROI Architecture</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Address physician burnout by reducing documentation time by 60% while simultaneously improving billing integrity through automated HCC coding suggestions.</p>
+<div class="mt-8 pt-8 border-t border-outline-variant/10">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm opacity-60">EFFICIENCY</span>
+<span class="font-label-sm text-label-sm text-primary">+2.4hr Saved/MD</span>
+</div>
+</div>
+</div>
+<!-- Speed -->
+<div class="glass-card p-8 rounded-2xl flex flex-col">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary mb-6">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</div>
+<h3 class="font-headline-lg text-[24px] mb-4">Rapid Deployment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Our proprietary API-first framework allows for system-wide deployment in under 90 days, integrating directly into Epic, Cerner, and Meditech environments.</p>
+<div class="mt-8 pt-8 border-t border-outline-variant/10">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm opacity-60">SETUP</span>
+<span class="font-label-sm text-label-sm text-tertiary">&lt; 90 Days</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Implementation: White-glove setup -->
+<section class="py-24 px-margin-desktop overflow-hidden">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-6">
+<span class="font-label-sm text-label-sm text-secondary tracking-[0.2em] mb-4 block">THE ONBOARDING JOURNEY</span>
+<h2 class="font-headline-lg text-[40px] leading-tight mb-8">White-Glove Implementation <br/>&amp; Systems Integration</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center font-bold text-primary">1</div>
+<div>
+<h4 class="font-body-lg font-bold mb-2">Discovery &amp; Gap Analysis</h4>
+<p class="font-body-md text-on-surface-variant">Our solutions engineers perform a deep audit of your current EHR workflows to identify bottlenecks and data siloes.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center font-bold text-primary">2</div>
+<div>
+<h4 class="font-body-lg font-bold mb-2">Technical Orchestration</h4>
+<p class="font-body-md text-on-surface-variant">Secure, HIPAA-compliant FHIR/HL7 integration handled entirely by our deployment teams, minimizing IT burden.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center font-bold text-primary">3</div>
+<div>
+<h4 class="font-body-lg font-bold mb-2">Clinical Adoption Training</h4>
+<p class="font-body-md text-on-surface-variant">On-site training and 24/7 dedicated support leads ensure physicians find value from the first minute of use.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-6 relative">
+<div class="relative z-10 glass-card p-1 rounded-2xl overflow-hidden">
+<img alt="Modern hospital operations center" class="w-full rounded-xl grayscale opacity-80" data-alt="A high-tech, futuristic medical operations center with large translucent glass screens displaying real-time hospital analytics and glowing digital charts. The room is dimly lit with deep blue and soft neon cyan accents, creating a cinematic and sophisticated atmosphere. Diverse medical professionals in modern white lab coats are seen in the distance, collaborating in a minimalist, professional environment with sleek metallic surfaces and advanced computational equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgF1KXiVvCIwZxOw_KFFIxiHcIhd12FGnzMIAMQN_2poUT6l4KQoXXg1P2HOpnKlNv7j4uDbOKQ3T5XWHwqTgcnJn5MtaRJEW9t1ivSkqcA02Sheg0EyjvLP29owXksLbMgNHlQoEwhGZhEekSxffycyRPj4I3jbdaB0QEdcjzqWzwHCk_uNOOQ6WEfnAeTIUV-rNVFxqdJh0eeT-yg2UgMzpkbAwrBYE6L0LCqXTp_krAINVPgREzdegCP2ZrczQNiVizUGNezLvs"/>
+</div>
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -bottom-10 -left-10 w-60 h-60 bg-secondary/10 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Success Stories -->
+<section class="py-24 px-margin-desktop bg-surface-container">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-20">
+<div class="md:col-span-2">
+<h2 class="font-display-lg text-display-lg mb-6">Quantifiable Results</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Data from our pilot health systems in North America and EMEA show transformative gains in operational efficiency.</p>
+</div>
+<div class="bg-surface-container-highest p-8 rounded-2xl border border-outline-variant/10 text-center">
+<div class="text-[56px] font-bold text-secondary mb-2">-60%</div>
+<p class="font-label-sm text-label-sm tracking-widest text-outline">DOCUMENTATION TIME</p>
+</div>
+<div class="bg-surface-container-highest p-8 rounded-2xl border border-outline-variant/10 text-center">
+<div class="text-[56px] font-bold text-primary mb-2">+18%</div>
+<p class="font-label-sm text-label-sm tracking-widest text-outline">REVENUE CAPTURE</p>
+</div>
+</div>
+<div class="glass-card p-12 rounded-3xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-12 opacity-5">
+<span class="material-symbols-outlined text-[200px]" data-icon="format_quote">format_quote</span>
+</div>
+<div class="max-w-3xl relative z-10">
+<p class="font-headline-lg text-headline-lg italic mb-10 leading-relaxed">
+                            "Clinical Intelligence OS didn't just add another tool to our EHR; it redefined how our physicians interact with data. We've seen a measurable reduction in 'pajama time' and a significant lift in clinical documentation accuracy across our 14-facility system."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border-2 border-primary/40 overflow-hidden">
+<img alt="CMIO Portrait" data-alt="A professional headshot of a senior medical executive, a man in his late 50s with a confident and kind expression, wearing a high-quality navy blue suit and a crisp white shirt. The background is a blurred, high-end medical facility with soft bokeh lights and a clean, minimalist aesthetic. The lighting is flattering and professional, emphasizing an atmosphere of trust, authority, and medical expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCarGFp9rSqkXGZESd972jQ-d6OHky6BdrNqE62GSXJq0ypbUeVusDOuKQXV5tmEJXjtvAkZuuSc317figCynTwNpVwqqd65953HFhVnXFNoCbM6dlic71HnB3Kao8Nr14ZBWfZo3oKjHAuNzG0KLfy6gIFJ_4V1T-g00lK4zFObBGZ68bmGlDx4Y-ZRz7fV6AYLnu5GGKr2p2L5Ru2LEOmIQGHbhUhvSrC7lJiTdXAx5f-jnNbvnfmcYA77PAX9ymKEt3T0Xi1ubrt"/>
+</div>
+<div>
+<div class="font-body-lg font-bold">Dr. Marcus Thorne</div>
+<div class="font-label-sm text-label-sm text-outline">Chief Medical Information Officer, Global Health Partners</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust / Logo Strip -->
+<section class="py-16 px-margin-desktop border-y border-outline-variant/10">
+<div class="max-w-container-max mx-auto">
+<p class="font-label-sm text-label-sm text-center text-outline mb-12 tracking-widest">TRUSTED BY GLOBAL HEALTHCARE SYSTEMS</p>
+<div class="flex flex-wrap justify-center items-center gap-16 md:gap-24 opacity-40 grayscale contrast-125">
+<div class="font-bold text-2xl tracking-tighter">MAYO CLINIC</div>
+<div class="font-bold text-2xl tracking-tighter italic">Cleveland Clinic</div>
+<div class="font-bold text-2xl tracking-tighter">Mass General</div>
+<div class="font-bold text-2xl tracking-tighter">KAISER PERMANENTE</div>
+<div class="font-bold text-2xl tracking-tighter">Johns Hopkins</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 px-margin-desktop text-center relative overflow-hidden">
+<div class="absolute inset-0 -z-10">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 rounded-[100%] blur-[120px]"></div>
+</div>
+<div class="max-w-3xl mx-auto">
+<h2 class="font-display-lg text-display-lg mb-8">Ready to Scale Intelligence?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                    Schedule a strategic consult with our enterprise architecture team to see how CI-OS can integrate with your existing infrastructure.
+                </p>
+<div class="flex justify-center gap-6">
+<button class="px-10 py-5 bg-primary-container text-on-primary-container font-bold rounded-lg hover:shadow-[0_0_25px_rgba(77,162,255,0.4)] transition-all transform hover:-translate-y-1">
+                        Book Executive Briefing
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="font-headline-lg text-headline-lg font-semibold text-on-surface dark:text-on-surface mb-2">Clinical Intelligence OS</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant opacity-60">© 2024 Clinical Intelligence OS. Advanced Computational Medicine.</div>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-200 hover:underline decoration-secondary/50 underline-offset-4" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-200 hover:underline decoration-secondary/50 underline-offset-4" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-200 hover:underline decoration-secondary/50 underline-offset-4" href="#">HIPAA Compliance</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-200 hover:underline decoration-secondary/50 underline-offset-4" href="#">Trust Center</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-200 hover:underline decoration-secondary/50 underline-offset-4" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for glass cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Simple scroll reveal
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

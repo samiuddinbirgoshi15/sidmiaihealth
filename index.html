@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SidmiAI Health | Clinical AI Platform</title>
+  <meta name="description" content="SidmiAI Health is the leading AI clinical documentation platform designed to unify patient data, automate SOAP notes, and surface real-time clinical intelligence." />
+  <meta property="og:title" content="SidmiAI Health | Clinical AI Platform" />
+  <meta property="og:description" content="SidmiAI Health is the leading AI clinical documentation platform designed to unify patient data, automate SOAP notes, and surface real-time clinical intelligence." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="dark" data-page="home">
+  <header>
+    <div class="flex items-center justify-between h-20 px-6 md:px-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <a href="index.html" class="nav-brand">SidmiAI Health</a>
+      <div class="hidden md:flex items-center gap-8 nav-links" id="nav-menu">
+        <a class="nav-link" href="index.html" data-page="home">Home</a>
+        <a class="nav-link" href="page2.html" data-page="capabilities">Capabilities</a>
+        <a class="nav-link" href="page3.html" data-page="workflow">Workflow</a>
+        <a class="nav-link" href="page4.html" data-page="enterprise">Enterprise</a>
+        <a class="nav-link" href="page5.html" data-page="security">Security</a>
+      </div>
+      <div class="flex items-center gap-4 desktop-actions">
+        <a href="book.html" class="bg-white text-black px-6 py-2.5 rounded-full font-label-sm text-label-sm font-extrabold shadow-lg hover:bg-slate-100 hover:scale-[1.02] transition-all duration-300 inline-block text-center">Book Demo</a>
+      </div>
+      <button id="nav-toggle" class="nav-toggle md:hidden" aria-label="Open navigation menu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+    <div id="mobile-nav" class="mobile-menu hidden md:hidden">
+      <a href="index.html" data-page="home">Home</a>
+      <a href="page2.html" data-page="capabilities">Capabilities</a>
+      <a href="page3.html" data-page="workflow">Workflow</a>
+      <a href="page4.html" data-page="enterprise">Enterprise</a>
+      <a href="page5.html" data-page="security">Security</a>
+      <div class="flex flex-col gap-3 pt-2 border-t border-white/10">
+        <a class="bg-white text-black py-3 rounded-full text-center font-extrabold shadow-lg hover:bg-slate-100 transition-all duration-300" href="book.html">Book Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <section class="relative min-h-screen flex items-center overflow-hidden grid-lines hero-gradient">
+      <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-70"></div>
+      <div class="absolute top-1/4 left-1/4 w-[520px] h-[520px] bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <div class="max-w-container-max mx-auto px-6 md:px-12 px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-12 items-center relative z-20">
+        <div class="space-y-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-label-sm uppercase tracking-widest">
+            <span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+            Next-Gen Clinical Intelligence
+          </div>
+          <h1 class="font-display-xl text-[48px] md:text-display-xl leading-tight">AI That Understands <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Clinical Care</span> in Real Time</h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Transform every clinical encounter into actionable intelligence. Automated SOAP notes, real-time diagnostic surfacing, and seamless EHR integration.</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="book.html" class="bg-white text-black px-8 py-4 rounded-full font-extrabold flex items-center gap-2 group shadow-lg hover:bg-slate-100 hover:scale-[1.02] transition-all duration-300 inline-flex">Start Enterprise Pilot <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span></a>
+            <a href="https://www.youtube.com/@HealthGuide-f9u" target="_blank" rel="noopener noreferrer" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-extrabold shadow-lg hover:bg-white hover:text-black transition-all duration-300 inline-block text-center">Watch Clinical Demo</a>
+          </div>
+        </div>
+        <div class="relative group">
+          <div class="glass-card rounded-2xl p-4 overflow-hidden border border-white/20 shadow-2xl relative">
+            <img class="w-full rounded-xl opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAexe_n9q5fQnw0NIa90xiNBRXwckGu74joTaWs-IjsqWQEYMfP8fd7YC4Z0u-RxajGYrJpw0enFqiML5uGNcUMB49JpDhleAbSEXp8IMrc-aDOE0SHPb3kFe3hpzs4k7cVVDvXkn1eE2ItQqjxCJyw04-CHtFsPRegiO7jEQIh1vi3Q2UjJK3gBM2ILJSl4QXwB0qu5OVRAik-8zcAL9xYSUL_4w2-JNMfvh2wP1SFs817YeSDR7Clwn6s_jOsKEPEyEfGF1xTACF" alt="Futuristic medical interface showing real-time clinical dashboards." />
+            <div class="absolute top-8 right-[-16px] glass-panel p-4 rounded-xl w-48 shadow-lg animate-bounce duration-[4s]">
+              <p class="text-[10px] text-secondary font-bold mb-1">REAL-TIME SOAP</p>
+              <div class="h-1 w-full bg-white/10 rounded-full mb-2 overflow-hidden"><div class="h-full bg-secondary w-2/3"></div></div>
+              <p class="text-[12px] leading-tight">Patient reports persistent localized lumbar pain...</p>
+            </div>
+            <div class="absolute bottom-12 left-[-26px] glass-panel p-4 rounded-xl w-56 shadow-lg">
+              <div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-primary">clinical_notes</span><span class="text-[10px] font-bold">TRANSCRIPTION</span></div>
+              <div class="space-y-1"><div class="h-1.5 w-full bg-white/5 rounded-full"></div><div class="h-1.5 w-4/5 bg-white/5 rounded-full"></div><div class="h-1.5 w-5/6 bg-white/5 rounded-full"></div></div>
+            </div>
+          </div>
+          <div class="absolute -inset-4 bg-primary/20 rounded-full blur-[60px] -z-10 opacity-50 group-hover:opacity-100 transition-opacity"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 border-y border-outline-variant/10 bg-surface-dim">
+      <div class="max-w-container-max mx-auto px-6 md:px-12 px-margin-mobile md:px-margin-desktop text-center">
+        <p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant/60 mb-8">Trusted by Global Healthcare Systems</p>
+        <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale transition-all hover:grayscale-0">
+          <img alt="Healthcare partner logo" class="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKxx9xeaV4AZMxMjFPbciO5TKgapWZp2PjsZ4S7-aY0ZvHhYvLEamPPV1AGz8_bw-Mu5Nj13TU9RnWgE4rfzfqpXbKqvtovbZ6EB7LZq25B9AtHJfQYwOvplkhCF5HjkluXW95U5KBkobmnqClBJczLPmuuQifg8g5b6dwqscMaTw6SWri8qqFwtv-k7qaWP5C_nN2I_0qydwr1ya7ELIYS9iapP6_eT-0WHYo8LMkjjRRfF_4DsVxQiCJ-_wu-CocsTjhTjXp2kYF" />
+          <img alt="Healthcare partner logo" class="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj14WHlEjkjvgmAZWVab5CZnqv-8QCyMNWW-cIh1Y3sWYtEKGtRAEx_sMCWNmmWMLRy8kABiDARICZ9gtwKa9kqbRagnUCQi8HawY_JJs88dMYW7xCgML-dQEEsQwr9Tq98_jEY2dR9ZJiL1u0kNH8xra66BOxZH8CAZN14shgV0pYmTHs5jFDLcDSJM44wcdtyqcusvj3uTh2S7wQwnc6iGBvK-qt4MYHBbpZ7xsload6C4gqAqcQT2NZmZ7ILXi8Sc0Bs7dIVHyC" />
+          <img alt="Healthcare partner logo" class="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE3o2wumepJsYvjr4YD4bWvyVEXFDTJ_Ihv8hJ4-UAKCAnyfXjOk3PYmAcaI-ddBAg5AraE9WkpWcTAotgY3_-W3WNS8NjG5TiZiH5zgx4Ank0MmuF-lmbZNy8d7qgv-pODnasZ554EreF0YHYC3uWUev9aX-QFMXtXHy0nPtq4wyUZm4XeptlpUpR-VDdsEqXeSG_aG1y-yEgAiosCPYOWY7xXBSu5_yNl-70vDYjbfHxgRlurXgV_WDyGf75oUrMnyD-ziGwKL09" />
+          <img alt="Healthcare partner logo" class="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB40uf7lmMLue9XaLqnnpc00e5wuhESYKUHN7pB1cs9IMOiisPlKHY2uQfblpa1GxyhVU8dp1QzmjflA-7xVMSPr_cZ3BsY87lAAU5POCsqCU4TwOjJEan5zvsdAlBcyz2XQKQmt1LXWQhymzFiKWLq52iGjRn7NSpqCScGIISWxvvzikO3t62RDN2_fvzeI91mSPgG145g9gRkPLR92FvFlhqgZWWd3PtXv_AwxM2YC0YI_e8ijmQ1vnRfZHypnlPrP9JcfxaAOnAI" />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 relative overflow-hidden">
+      <div class="max-w-container-max mx-auto px-6 md:px-12 px-margin-mobile md:px-margin-desktop">
+        <div class="text-center max-w-2xl mx-auto mb-20">
+          <h2 class="font-display-lg text-display-lg mb-6">Autonomous Documentation Workflow</h2>
+          <p class="text-on-surface-variant">Focus on the patient while SidmiAI Health handles the clinical capture, structuring, and EHR entry.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 relative">
+          <div class="glass-card p-8 rounded-2xl relative z-10 hover:border-primary/50 transition-colors group">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+              <span class="material-symbols-outlined text-primary">mic</span>
+            </div>
+            <h3 class="font-headline-lg text-headline-lg mb-4">Voice Detection</h3>
+            <p class="text-on-surface-variant font-body-md">High-fidelity ambient listening filters clinical dialogue from background noise with medical-grade accuracy.</p>
+          </div>
+          <div class="glass-card p-8 rounded-2xl relative z-10 hover:border-secondary/50 transition-colors group">
+            <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
+              <span class="material-symbols-outlined text-secondary">psychology</span>
+            </div>
+            <h3 class="font-headline-lg text-headline-lg mb-4">Context Extraction</h3>
+            <p class="text-on-surface-variant font-body-md">Advanced LLMs map colloquial symptoms to medical terminology, extracting billing codes and clinical history.</p>
+          </div>
+          <div class="glass-card p-8 rounded-2xl relative z-10 hover:border-tertiary/50 transition-colors group">
+            <div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center mb-6 group-hover:bg-tertiary/20 transition-colors">
+              <span class="material-symbols-outlined text-tertiary">analytics</span>
+            </div>
+            <h3 class="font-headline-lg text-headline-lg mb-4">Predictive Insights</h3>
+            <p class="text-on-surface-variant font-body-md">Model patient trajectories and flag high-risk cases before critical events unfold.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-surface-container-lowest/50 relative overflow-hidden">
+      <div class="max-w-container-max mx-auto px-6 md:px-12 px-margin-mobile md:px-margin-desktop">
+        <div class="mx-auto max-w-3xl text-center mb-16">
+          <h2 class="font-display-lg text-display-lg mb-6 leading-tight">From Unstructured Data to <span class="text-primary">Clinical Clarity</span></h2>
+          <p class="text-body-lg text-on-surface-variant">SidmiAI Health scans legacy faxes, PDF lab results, and imaging notes, synthesizing them into a unified clinical view. No more digging through the chart—the intelligence finds you.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="glass-card p-8 rounded-3xl">
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 mb-4 text-primary">
+              <span class="material-symbols-outlined">description</span>
+            </div>
+            <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-3">Structured Notes</h3>
+            <p class="text-on-surface-variant font-body-md">Automatic SOAP note generation with integrated ICD-10 mapping for every patient encounter.</p>
+          </div>
+          <div class="glass-card p-8 rounded-3xl">
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-secondary/10 mb-4 text-secondary">
+              <span class="material-symbols-outlined">security</span>
+            </div>
+            <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-3">Zero-Retention AI</h3>
+            <p class="text-on-surface-variant font-body-md">Process clinical data in memory only with no persistent storage of sensitive patient speech.</p>
+          </div>
+          <div class="glass-card p-8 rounded-3xl">
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-tertiary/10 mb-4 text-tertiary">
+              <span class="material-symbols-outlined">integration_instructions</span>
+            </div>
+            <h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-3">EHR Ready</h3>
+            <p class="text-on-surface-variant font-body-md">Out-of-the-box connectors for Epic, Cerner, Meditech, and cloud-native FHIR pipelines.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 max-w-container-max mx-auto px-6 md:px-12 px-margin-mobile md:px-margin-desktop">
+      <div class="text-center mb-16">
+        <h2 class="font-display-lg text-display-lg">Enterprise Clinical Suite</h2>
+        <p class="text-on-surface-variant">Real-time synthesis of patient encounters into structured documentation with zero doctor intervention.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass-card p-8 rounded-3xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined">health_and_safety</span>
+          </div>
+          <h3 class="font-headline-lg-mobile text-headline-lg-mobile">Operational Intelligence</h3>
+          <p class="text-on-surface-variant font-body-md">Proactively route clinical alerts and optimize workflows across care teams.</p>
+        </div>
+        <div class="glass-card p-8 rounded-3xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+            <span class="material-symbols-outlined">insights</span>
+          </div>
+          <h3 class="font-headline-lg-mobile text-headline-lg-mobile">Adaptive Insights</h3>
+          <p class="text-on-surface-variant font-body-md">Deep learning intelligence adapts to specialty-specific language and care pathways.</p>
+        </div>
+        <div class="glass-card p-8 rounded-3xl space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+            <span class="material-symbols-outlined">support</span>
+          </div>
+          <h3 class="font-headline-lg-mobile text-headline-lg-mobile">Security First</h3>
+          <p class="text-on-surface-variant font-body-md">Encrypted transport and audit-ready logging built for HIPAA and healthcare enterprise control requirements.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-12 px-margin-mobile md:px-margin-desktop text-center">
+      <div class="max-w-3xl mx-auto glass-card p-16 rounded-[3rem] relative overflow-hidden">
+        <div class="absolute -top-20 -left-20 w-72 h-72 bg-secondary/15 rounded-full blur-[100px]"></div>
+        <div class="absolute -bottom-20 -right-20 w-72 h-72 bg-primary/10 rounded-full blur-[100px]"></div>
+        <h2 class="font-display-lg text-display-lg mb-6">Bring Back Time for <span class="text-secondary">Patient Care</span></h2>
+        <p class="text-on-surface-variant font-body-lg mb-12">Experience the future of clinical documentation. Join hundreds of health systems reducing burnout and improving outcomes with SidmiAI Health.</p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+          <a href="book.html" class="bg-white text-black px-10 py-5 rounded-xl font-label-sm text-label-sm font-extrabold shadow-lg hover:bg-slate-100 hover:scale-[1.02] transition-all duration-300 inline-block text-center">Book Demo</a>
+          <a href="book.html" class="bg-transparent border-2 border-white text-white px-10 py-5 rounded-xl font-label-sm text-label-sm font-extrabold shadow-lg hover:bg-white hover:text-black transition-all duration-300 inline-block text-center">Contact Sales</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-surface-container-lowest border-t border-outline-variant/10 py-16">
+    <div class="max-w-container-max mx-auto px-6 md:px-12 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-12 justify-between items-start">
+      <div class="space-y-4 md:col-span-1">
+        <div class="font-headline-lg text-headline-lg font-semibold text-white">SidmiAI Health</div>
+        <div class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">© 2024 SidmiAI Health. Advanced Computational Medicine & HIPAA Compliant AI. All rights reserved.</div>
+        <div class="flex items-center gap-4 pt-2">
+          <a href="https://www.linkedin.com/in/health-guide-36577040b/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300 shadow-lg" aria-label="LinkedIn">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.92h2.79v8.37H6.46v-8.37M7.86 5.56a1.6 1.6 0 0 0-1.6 1.6 1.6 1.6 0 0 0 1.6 1.6 1.6 1.6 0 0 0 1.6-1.6 1.6 1.6 0 0 0-1.6-1.6Z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@HealthGuide-f9u" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300 shadow-lg" aria-label="YouTube">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="space-y-4 md:col-span-1">
+        <div class="font-bold text-white text-sm uppercase tracking-wider">Solutions</div>
+        <div class="flex flex-col gap-3 text-label-sm text-on-surface-variant font-medium">
+          <a href="page2.html" class="hover:text-white transition-colors">AI Capabilities</a>
+          <a href="page3.html" class="hover:text-white transition-colors">Clinical Workflow</a>
+          <a href="page4.html" class="hover:text-white transition-colors">Enterprise Scale</a>
+        </div>
+      </div>
+      <div class="space-y-4 md:col-span-1">
+        <div class="font-bold text-white text-sm uppercase tracking-wider">Trust & Security</div>
+        <div class="flex flex-col gap-3 text-label-sm text-on-surface-variant font-medium">
+          <a href="page5.html" class="hover:text-white transition-colors">Security Architecture</a>
+          <a href="page5.html" class="hover:text-white transition-colors">HIPAA Compliance</a>
+          <a href="page5.html" class="hover:text-white transition-colors">Trust Center</a>
+        </div>
+      </div>
+      <div class="space-y-4 md:col-span-1">
+        <div class="font-bold text-white text-sm uppercase tracking-wider">Company & Legal</div>
+        <div class="flex flex-col gap-3 text-label-sm text-on-surface-variant font-medium">
+          <a href="book.html" class="hover:text-white transition-colors">Contact Sales</a>
+          <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

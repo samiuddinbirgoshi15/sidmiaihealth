@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e0e2ea",
+                        "outline": "#8a919d",
+                        "on-tertiary-container": "#4f2f00",
+                        "on-secondary-fixed": "#001f24",
+                        "on-tertiary": "#472a00",
+                        "surface-container-highest": "#31353b",
+                        "surface-container": "#1c2026",
+                        "secondary-fixed-dim": "#62d6e7",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "outline-variant": "#404752",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#de8d00",
+                        "on-secondary-container": "#002f35",
+                        "on-primary-fixed": "#001c38",
+                        "error": "#ffb4ab",
+                        "secondary": "#62d6e7",
+                        "background": "#101419",
+                        "primary-fixed-dim": "#a2c9ff",
+                        "inverse-surface": "#e0e2ea",
+                        "surface-container-low": "#181c21",
+                        "primary-container": "#4da2ff",
+                        "on-surface-variant": "#c0c7d4",
+                        "secondary-fixed": "#95f1ff",
+                        "on-primary": "#00315c",
+                        "inverse-on-surface": "#2d3137",
+                        "surface-tint": "#a2c9ff",
+                        "on-background": "#e0e2ea",
+                        "on-error": "#690005",
+                        "surface-variant": "#31353b",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface-container-high": "#272a30",
+                        "on-tertiary-fixed": "#2b1700",
+                        "surface-bright": "#363940",
+                        "primary": "#a2c9ff",
+                        "inverse-primary": "#0060aa",
+                        "tertiary-fixed-dim": "#ffb961",
+                        "surface": "#101419",
+                        "tertiary": "#ffb961",
+                        "on-secondary-fixed-variant": "#004f57",
+                        "surface-dim": "#101419",
+                        "tertiary-fixed": "#ffddb8",
+                        "secondary-container": "#0d9faf",
+                        "primary-fixed": "#d3e4ff",
+                        "on-secondary": "#00363d",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#003765",
+                        "on-primary-fixed-variant": "#004881"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "unit": "4px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["15px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease-in-out;
+        }
+        .glass-card:hover {
+            border-color: rgba(77, 162, 255, 0.4);
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 40px -10px rgba(98, 214, 231, 0.2);
+        }
+        .grid-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .ai-pulse {
+            animation: pulse 3s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); filter: blur(4px); }
+            50% { opacity: 0.3; transform: scale(1.1); filter: blur(8px); }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .primary-glow-hover:hover {
+            box-shadow: 0 0 20px 2px rgba(77, 162, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="font-headline-lg text-headline-lg font-bold tracking-tighter text-on-surface dark:text-on-surface">
+                Clinical Intelligence OS
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-primary dark:text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-label-sm transition-all duration-300" href="#">Solutions</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-secondary font-label-sm text-label-sm transition-all duration-300" href="#">AI Capabilities</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-secondary font-label-sm text-label-sm transition-all duration-300" href="#">Enterprise</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-secondary font-label-sm text-label-sm transition-all duration-300" href="#">Security</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-secondary font-label-sm text-label-sm transition-all duration-300" href="#">Resources</a>
+</nav>
+<div class="flex gap-4 items-center">
+<button class="font-label-sm text-label-sm text-on-surface hover:text-secondary transition-colors duration-200">Log In</button>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-label-sm text-label-sm font-bold primary-glow-hover transition-all active:scale-95">Request Demo</button>
+</div>
+</div>
+</header>
+<main class="grid-pattern">
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-24 pb-32 px-margin-desktop max-w-container-max mx-auto">
+<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+<div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] -z-10"></div>
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1 space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/30 text-secondary">
+<span class="material-symbols-outlined text-[16px]">neurology</span>
+<span class="font-label-sm text-label-sm uppercase">The Future of Care Delivery</span>
+</div>
+<h1 class="font-display-xl text-display-xl tracking-tight leading-[1.1] max-w-2xl">
+                        The Foundation of <span class="text-primary">Computational</span> Medicine
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        Aether OS is the clinical operating system designed to unify patient data, automate documentation, and surface life-saving insights through real-time intelligence.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-label-sm text-label-sm font-bold primary-glow-hover transition-all flex items-center gap-2">
+                            Explore the Platform
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="glass-card px-8 py-4 rounded-xl font-label-sm text-label-sm font-semibold hover:bg-white/10 transition-colors">
+                            Watch Technical Keynote
+                        </button>
+</div>
+</div>
+<!-- Hero Visual: Modular Platform -->
+<div class="flex-1 relative">
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-card p-6 rounded-2xl glow-cyan group hover:border-primary/50 transition-all">
+<div class="h-40 bg-surface-container-lowest rounded-xl mb-4 overflow-hidden relative">
+<img class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" data-alt="A highly detailed 3D abstract visualization of neural networks and data pathways in a dark clinical environment. The scene features glowing cyan light filaments pulsing through semi-transparent glass modules. The lighting is cinematic and low-key, emphasizing precision and medical intelligence. The overall aesthetic is futuristic and clean, consistent with a high-end medical software interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPT4X3SqstyrIJ9zRsGs1qqdNVcDarffwrI-P-CDpns14uFfxX2Vdf4J6CCptxLECeP1z7eg6A6biA_fb92d016TmtGFfmzz3Tx_Xz7DK7ssh--Ftmi6A3HbWsMDGz-E6k6PqbelMiBcKk3lOIVcNwBVkfKKnw7TMOAWS6q0WH0BW-GKWsfLMH88NY5TZjkpPx8AeA-OZWT1YtMKpBWw8BMKwARizjtGq204dEBnKdaI7t3WSpgZYsF6oVwnSj3nOVg1T4h5rBkJk5"/>
+</div>
+<div class="font-label-sm text-label-sm text-primary mb-2">MODULE 01</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile">Core Core Engine</div>
+</div>
+<div class="glass-card p-6 rounded-2xl mt-8 hover:border-secondary/50 transition-all">
+<div class="h-40 bg-surface-container-lowest rounded-xl mb-4 overflow-hidden">
+<img class="w-full h-full object-cover opacity-40 group-hover:opacity-80 transition-opacity" data-alt="Macro photography of a sleek futuristic sensor or medical device with intricate circuitry glowing with a soft blue light. The background is a dark, minimalist laboratory setting with glass textures and subtle lens flares. The mood is calm, professional, and technologically advanced, using a palette of deep navy and bright cyan." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIGe8gJKyzRQbRXlVaPf0sbSI_WwLyma2jMj9p7p1pAry875hUgKgX6dJQo5SgQ_pIZUZcwqmod-hpIRVkuHmC8DFq5o0yWcaacr6qUGuzKUASV030KqOrN1OiV7ZgkUz5apkdXe1u4YJ1pNxiqKZeo6NKVePFmc8qi1K7EH4VWkLJlgBnBivGyfAfEZyURD3s8RGdxxN226KQIF31W6C_6OuSDosllvmXg5KBJPH243t6xoDgqoMaqFtAWbx18h_4HM4O90XgVOFR"/>
+</div>
+<div class="font-label-sm text-label-sm text-secondary mb-2">MODULE 02</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile">Inference Layer</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Modules Section: Bento Grid -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-display-lg text-display-lg">The OS Components</h2>
+<p class="text-on-surface-variant font-body-lg max-w-2xl mx-auto">Seamlessly integrated modules that handle the complexity of clinical practice.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Ambient Scribe -->
+<div class="md:col-span-8 glass-card p-8 rounded-[2rem] flex flex-col md:flex-row gap-8 overflow-hidden relative group">
+<div class="flex-1 space-y-4 z-10">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">mic</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg">Ambient Scribe</h3>
+<p class="text-on-surface-variant font-body-md">Capture natural physician-patient conversations and transform them into structured clinical notes automatically. No templates, just natural language processing at its finest.</p>
+<div class="flex gap-4 pt-4">
+<div class="flex items-center gap-2 text-primary font-label-sm">
+<span class="ai-pulse w-2 h-2 rounded-full bg-secondary"></span>
+                                LISTENING...
+                            </div>
+</div>
+</div>
+<div class="flex-1 min-h-[240px] bg-surface-container-high rounded-2xl border border-white/5 relative overflow-hidden">
+<div class="absolute inset-0 p-6 font-mono text-[10px] text-outline opacity-40 leading-relaxed overflow-hidden">
+                            [00:01:24] DR: "The patient reports recurring thoracic pain..."<br/>
+                            [SYSTEM: EXTRACTING SYMPTOMS...]<br/>
+                            - Chest pain (Thoracic)<br/>
+                            - Onset: 3 days ago<br/>
+                            [GENERATING SOAP NOTE...]<br/>
+                            S: Patient presents with persistent chest pain...
+                        </div>
+<div class="absolute bottom-4 right-4 p-4 glass-card rounded-xl border-primary/30">
+<div class="text-primary font-label-sm mb-1">ACCURACY</div>
+<div class="text-headline-lg-mobile font-bold">99.4%</div>
+</div>
+</div>
+</div>
+<!-- Patient Timeline -->
+<div class="md:col-span-4 glass-card p-8 rounded-[2rem] space-y-6">
+<div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[32px]">history</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg">Patient Timeline</h3>
+<p class="text-on-surface-variant font-body-md">A unified, chronologically intelligent view of the patient's longitudinal record, highlighting critical gaps and clinical correlations.</p>
+<div class="h-32 flex items-end gap-1">
+<div class="flex-1 bg-primary/20 h-1/2 rounded-t-sm"></div>
+<div class="flex-1 bg-primary/40 h-2/3 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary/60 h-full rounded-t-sm relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 text-[8px] bg-secondary text-on-secondary px-1 rounded">EVENT</div>
+</div>
+<div class="flex-1 bg-primary/30 h-3/4 rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-1/2 rounded-t-sm"></div>
+</div>
+</div>
+<!-- Report Intelligence -->
+<div class="md:col-span-4 glass-card p-8 rounded-[2rem] space-y-6">
+<div class="w-12 h-12 bg-tertiary/10 rounded-xl flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[32px]">description</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg">Report Intelligence</h3>
+<p class="text-on-surface-variant font-body-md">Instant synthesis of multi-modal diagnostic data—imaging, labs, and pathology—into actionable executive summaries.</p>
+</div>
+<!-- Analytics Hub -->
+<div class="md:col-span-8 glass-card p-8 rounded-[2rem] relative overflow-hidden group">
+<div class="flex flex-col md:flex-row gap-8">
+<div class="flex-1 space-y-4">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">analytics</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg">Analytics Hub</h3>
+<p class="text-on-surface-variant font-body-md">Predictive modeling for population health and resource management. Visualize health trends before they become crises.</p>
+<ul class="space-y-2 text-on-surface/70 font-label-sm text-[11px] uppercase tracking-wider">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Risk Stratification</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Operational Efficiency</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Clinical Quality Metrics</li>
+</ul>
+</div>
+<div class="flex-1 h-64 bg-surface-container-high rounded-2xl border border-white/5 relative overflow-hidden">
+<img class="w-full h-full object-cover opacity-50" data-alt="A sophisticated data dashboard displaying intricate charts and health metrics. The interface uses a dark mode palette with glowing neon lines in shades of blue and cyan. The aesthetic is clean and surgical, representing high-end computational medicine. The visualization includes floating 3D data points and subtle motion blur, creating a sense of dynamic real-time processing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAyAdvGb2tb7u7szqIfK3njhhzJzQ2CXcDZCn26pHSMzD7ECPY4Ui5C_2Ab7_p7J2anDg6rkJfDnB4PWl6vd0lMFZLb0Ndmy5oOR8O2O2xXC2KfmTD2TdU-m-KMeCZSUj0Q76MH_hO8aQlcD-kRQ0tkHf6PcQf_A_vwAnouiQnKvs5jo2QAzf8njTA1tYcSvMnrjSn0fsg4kLPt2APaTxcN6lb6V6wQbisfiDdAqOl7abBgSt0eiH7Sy2ZE_aiyHXhIBz6Y1Iz-UVc"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Integration Section -->
+<section class="py-24 bg-surface-container-lowest border-y border-outline-variant/10">
+<div class="px-margin-desktop max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg mb-12">Fits your existing workflow.</h2>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+<div class="flex flex-col items-center gap-3">
+<div class="text-[32px] font-bold tracking-tighter text-on-surface">Epic</div>
+<div class="font-label-sm text-label-sm text-outline">NATIVE CONNECTOR</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="text-[32px] font-bold tracking-tighter text-on-surface">Cerner</div>
+<div class="font-label-sm text-label-sm text-outline">HL7/FHIR READY</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="text-[32px] font-bold tracking-tighter text-on-surface">Meditech</div>
+<div class="font-label-sm text-label-sm text-outline">API INTEGRATION</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="text-[32px] font-bold tracking-tighter text-on-surface">Athena</div>
+<div class="font-label-sm text-label-sm text-outline">CLOUD SYNC</div>
+</div>
+</div>
+<p class="mt-12 text-on-surface-variant font-body-md max-w-xl mx-auto">
+                    Full HIPAA compliance and military-grade encryption ensure your data remains secure while integrating with the world's leading EHR systems.
+                </p>
+</div>
+</section>
+<!-- Why Aether OS Section -->
+<section class="py-32 px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="space-y-12">
+<h2 class="font-display-lg text-display-lg">Built for Clinicians, <br/><span class="text-secondary">Powered by Intelligence</span>.</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<div>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile mb-2">Absolute Reliability</h4>
+<p class="text-on-surface-variant font-body-md">99.99% uptime with redundant neural processing nodes to ensure intelligence is always available when every second counts.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">precision_manufacturing</span>
+</div>
+<div>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile mb-2">Unmatched Precision</h4>
+<p class="text-on-surface-variant font-body-md">Our models are trained exclusively on validated clinical datasets, reducing hallucinations and maximizing diagnostic accuracy.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 rounded-full border border-tertiary/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary">design_services</span>
+</div>
+<div>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile mb-2">Clinician-First Design</h4>
+<p class="text-on-surface-variant font-body-md">Designed in collaboration with over 200 practicing specialists to eliminate friction and restore the joy of practicing medicine.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="glass-card aspect-square rounded-[3rem] p-12 overflow-hidden flex items-center justify-center relative">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10"></div>
+<div class="relative z-10 text-center">
+<div class="w-32 h-32 bg-background rounded-full mx-auto mb-8 flex items-center justify-center shadow-2xl">
+<span class="material-symbols-outlined text-[64px] text-primary ai-pulse" data-weight="fill">fluid_med</span>
+</div>
+<div class="font-display-lg text-display-lg mb-2">0.0ms</div>
+<div class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Latency Architecture</div>
+</div>
+<!-- Decorative Orbits -->
+<div class="absolute inset-0 border-2 border-white/5 rounded-full scale-75 animate-[spin_20s_linear_infinite]"></div>
+<div class="absolute inset-0 border-2 border-white/5 rounded-full scale-110 animate-[spin_30s_linear_infinite_reverse]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-32 px-margin-desktop text-center">
+<div class="max-w-4xl mx-auto glass-card p-16 rounded-[3rem] relative overflow-hidden">
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/20 rounded-full blur-[80px]"></div>
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/20 rounded-full blur-[80px]"></div>
+<h2 class="font-display-lg text-display-lg mb-6">Ready to upgrade your clinical workflow?</h2>
+<p class="text-on-surface-variant font-body-lg mb-12 max-w-2xl mx-auto">Join the leading institutions redefining medical care with Clinical Intelligence OS.</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-primary-container text-on-primary-container px-10 py-5 rounded-xl font-label-sm text-label-sm font-bold primary-glow-hover transition-all text-lg">Book Private Demo</button>
+<button class="glass-card px-10 py-5 rounded-xl font-label-sm text-label-sm font-semibold hover:bg-white/10 transition-colors text-lg">Contact Enterprise Sales</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-12 max-w-container-max mx-auto gap-8">
+<div class="flex flex-col gap-4">
+<div class="font-headline-lg text-headline-lg font-semibold text-on-surface dark:text-on-surface">
+                    Clinical Intelligence OS
+                </div>
+<div class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant">
+                    © 2024 Clinical Intelligence OS. Advanced Computational Medicine.
+                </div>
+</div>
+<div class="flex flex-wrap gap-8 items-center">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary hover:underline decoration-secondary/50 underline-offset-4 font-label-sm text-label-sm transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary hover:underline decoration-secondary/50 underline-offset-4 font-label-sm text-label-sm transition-colors duration-200" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary hover:underline decoration-secondary/50 underline-offset-4 font-label-sm text-label-sm transition-colors duration-200" href="#">HIPAA Compliance</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary hover:underline decoration-secondary/50 underline-offset-4 font-label-sm text-label-sm transition-colors duration-200" href="#">Trust Center</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary hover:underline decoration-secondary/50 underline-offset-4 font-label-sm text-label-sm transition-colors duration-200" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for scrolling and interactive elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.glass-card');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100');
+                        entry.target.classList.remove('translate-y-4');
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                card.classList.add('transition-all', 'duration-700', 'translate-y-4');
+                observer.observe(card);
+            });
+        });
+    </script>
+</body></html>
